@@ -29,9 +29,11 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.shuo.ba.R;
 import com.shuo.ba.activitys.MainActivity;
+import com.shuo.ba.activitys.UserInfoActivity;
 import com.shuo.ba.adapter.ChatListAdapter;
 import com.shuo.ba.beans.MyChatBean;
 import com.shuo.ba.fragment.EditMsgDialogFragmentHelper;
+import com.shuo.ba.helper.HeadshotHelper;
 import com.shuo.ba.helper.LoginAccountHelper;
 import com.shuo.ba.helper.TimeOutNotifier;
 import com.shuo.chatmodule.beans.ChatBean;
@@ -163,7 +165,7 @@ public class ChatViewModel extends AndroidViewModel implements ChatModel.Chattin
     }
 
 
-    public boolean refresh(MenuItem menuItem) {
+    private boolean refresh(MenuItem menuItem) {
         if (isConnected) {
             return false;
         }
@@ -194,10 +196,14 @@ public class ChatViewModel extends AndroidViewModel implements ChatModel.Chattin
 
     public void enterUserInfo() {
         Log.v("tag", "enter");
-        activity.runOnUiThread(() -> {
-            Toast.makeText(activity, "开发者还在努力开发中......", Toast.LENGTH_LONG).show();
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-        });
+//        activity.runOnUiThread(() -> {
+//            Toast.makeText(activity, "开发者还在努力开发中......", Toast.LENGTH_LONG).show();
+//            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+//        });
+        Intent intent = new Intent(activity, UserInfoActivity.class);
+        intent.putExtra("user", LoginAccountHelper.userToString(userBean));
+        activity.startActivity(intent);
+        activity.finish();
     }
 
     public void logout() {
@@ -239,7 +245,7 @@ public class ChatViewModel extends AndroidViewModel implements ChatModel.Chattin
             return;
         }
         activity.runOnUiThread(() -> {
-            Glide.with(activity).load("http://" + NetworkConstant.SERVER_IP + ":" + NetworkConstant.SERVER_PORT + "/headshot/" + userBean.getId()).addListener(new RequestListener<Drawable>() {
+            Glide.with(activity).load(HeadshotHelper.getHeadshotUrl(userBean)).addListener(new RequestListener<Drawable>() {
                 @Override
                 public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
                     bottomAppBar.setNavigationIcon(R.mipmap.header_1);
