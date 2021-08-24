@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">漂流瓶</string>
+
+    <string name="welcome_text">欢迎使用说吧</string>
+    <string name="please_select">请选择</string>
+
+    <string name="sign_in">登录</string>
+    <string name="sign_up">注册</string>
+
+    <string name="create_new_user">创建一个新的用户</string>
+    <string name="please_input_user_name">请输入用户名</string>
+    <string name="please_input_password">请输入密码</string>
+    <string name="please_input_secure_problem">请输入安全问题</string>
+    <string name="please_input_secure_answer">请输入安全问题的答案</string>
+    <string name="please_select_headshot">请选择头像</string>
+    <string name="please_input_msg">请输入要发送的信息</string>
+    <string name="sign_in_success">登录成功</string>
+    <string name="sign_in_failed">登陆失败</string>
+
+    <string name="user_name">用户名</string>
+    <string name="password">密码</string>
+    <string name="secure_problem">安全问题</string>
+    <string name="secure_answer">安全答案</string>
+
+    <string name="helper_user_name">以后将用此用户名登录</string>
+    <string name="helper_password">"作为该账户的登录密码</string>
+    <string name="helper_secure_problem">该账户的安全问题</string>
+    <string name="helper_secure_answer">该账户的安全问题答案,忘记密码可用此登录</string>
+
+    <string name="write_down">写下此时的想法吧</string>
+
+    <string name="connecting">正在连接到服务器</string>
+
+    <string name="refresh">刷新</string>
+
+    <string name="user_info">个人主页</string>
+    <string name="sign_out">登出账号</string>
+    <string name="loading">加载中....</string>
+    <string name="back_to_top">回到顶部</string>
+    <string name="select_header">选择头像</string>
+</resources>

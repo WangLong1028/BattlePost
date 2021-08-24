@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="chat"
+            type="com.shuo.ba.viewmodels.ChatViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            app:hideOnScroll="true"
+            app:menu="@menu/activity_chat_menu" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->chat.sendMsg()}"
+            app:layout_anchor="@id/bottom_appbar"
+            app:maxImageSize="@dimen/fab_icon_size"
+            app:srcCompat="@mipmap/create"
+            app:tint="@android:color/white" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:elevation="16dp"
+            app:behavior_hideable="true"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/bottom_sheet_header"
+                app:shapeAppearanceOverlay="@style/CircleImage"
+                android:layout_width="@dimen/bottom_sheet_icon_size"
+                android:layout_height="@dimen/bottom_sheet_icon_size"
+                android:layout_marginStart="@dimen/bottom_sheet_margin_horizontal"
+                android:layout_marginTop="@dimen/bottom_sheet_margin_vertical"
+                android:layout_marginEnd="@dimen/bottom_sheet_margin_horizontal"
+                android:src="@mipmap/header_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/bottom_item_view_icon_size"
+                android:text="@{chat.userName}"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_sheet_header"
+                app:layout_constraintStart_toEndOf="@id/bottom_sheet_header"
+                app:layout_constraintTop_toTopOf="@id/bottom_sheet_header" />
+
+            <com.shuo.ba.view.BottomItemView
+                android:id="@+id/bottom_item_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/bottom_sheet_margin_vertical"
+                app:icon="@mipmap/user_info"
+                app:item_title="@string/user_info"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bottom_sheet_header" />
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.12"
+                android:background="@android:color/black"
+                app:layout_constraintTop_toBottomOf="@id/bottom_item_user_info" />
+
+            <com.shuo.ba.view.BottomItemView
+                android:id="@+id/bottom_item_sign_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:icon="@mipmap/sign_out"
+                app:item_title="@string/sign_out"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

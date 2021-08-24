@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners android:radius="10dp" />
+
+    <padding
+        android:bottom="@dimen/et_custom_padding"
+        android:left="@dimen/et_custom_padding"
+        android:right="@dimen/et_custom_padding"
+        android:top="@dimen/et_custom_padding" />
+
+    <solid android:color="@color/et_sign_color_normal" />
+</shape>

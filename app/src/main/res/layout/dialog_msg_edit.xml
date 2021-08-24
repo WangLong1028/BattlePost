@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="editMsg"
+            type="com.shuo.ba.viewmodels.DialogMsgViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardMaxElevation="@dimen/cardview_default_elevation"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_exit"
+                    android:layout_width="@dimen/title_bar_icon_size"
+                    android:layout_height="@dimen/title_bar_icon_size"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="@dimen/title_bar_icon_margin"
+                    app:srcCompat="@mipmap/exit"
+                    android:onClick="@{()->editMsg.exit()}"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_header"
+                    app:shapeAppearanceOverlay="@style/CircleImage"
+                    android:layout_width="@dimen/title_bar_icon_size"
+                    android:layout_height="@dimen/title_bar_icon_size"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/title_bar_icon_margin"
+                    android:background="@color/color_white"
+                    app:srcCompat="@mipmap/header_1" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_send"
+                    android:layout_width="@dimen/title_bar_icon_size"
+                    android:layout_height="@dimen/title_bar_icon_size"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/title_bar_icon_margin"
+                    app:srcCompat="@mipmap/send"
+                    android:onClick="@{()->editMsg.send()}"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="top|start"
+            android:hint="@string/write_down"
+            android:maxLength="200"
+            android:padding="@dimen/title_bar_icon_margin"
+            android:text="@={editMsg.editContentText}" />
+
+
+    </LinearLayout>
+</layout>

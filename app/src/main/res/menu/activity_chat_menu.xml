@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/chat_menu_refresh"
+        android:icon="@mipmap/refresh"
+        android:title="@string/refresh"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/chat_menu_to_top"
+        android:icon="@mipmap/back_to_top"
+        android:title="@string/back_to_top"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:icon="@mipmap/github"
+        android:title="测试3"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:icon="@mipmap/wechat"
+        android:title="测试4"
+        app:showAsAction="ifRoom"/>
+</menu>

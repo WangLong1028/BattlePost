@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_btn_margin_vertical">20dp</dimen>
+    <dimen name="et_custom_padding">16dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="sign_in_et_margin_vertical">20dp</dimen>
+    <dimen name="sign_up_et_margin_vertical">24dp</dimen>
+    <dimen name="fab_icon_size">18dp</dimen>
+    
+    <dimen name="content_margin">20dp</dimen>
+
+    <dimen name="title_bar_icon_margin">10dp</dimen>
+    <dimen name="title_bar_icon_size">24dp</dimen>
+
+    <dimen name="bottom_sheet_icon_size">36dp</dimen>
+    <dimen name="bottom_item_view_icon_size">20dp</dimen>
+    <dimen name="bottom_sheet_margin_horizontal">24dp</dimen>
+    <dimen name="bottom_sheet_margin_vertical">12dp</dimen>
+</resources>
